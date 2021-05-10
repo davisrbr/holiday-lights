@@ -3,7 +3,6 @@ from street_view import StreetViewer
 import matplotlib.pyplot as plt
 
 # test with GWU marvin center address
-api_key = 'AIzaSyBqm_ZCjRZpz2x8ScGazSDwVC4mdN6iSnQ'
 gwu_viewer = StreetViewer(api_key=api_key,
                            location='800 N Main St., Tarboro NC 27886')
 gwu_viewer.get_meta()
