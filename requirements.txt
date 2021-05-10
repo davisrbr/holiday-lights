@@ -5,3 +5,4 @@ streamlit==0.81.1
 dominate==2.4.0
 GPUtil==1.4.0
 Pillow==8.2.0
+matplotlib==3.3.4
