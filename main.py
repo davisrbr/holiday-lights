@@ -37,7 +37,7 @@ def lightify(img, model):
 
 
 if __name__ == "__main__":
-    st.title("Christmaslightify")
+    st.title("Lightify")
     st.subheader(
         "Miss the holidays? Want some Christmas cheer? Either enter a street address or upload an image (ideally of a house) to experience some Christmas magic."
     )
