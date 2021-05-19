@@ -1,7 +1,9 @@
-### Lights-ification
+### Lightify
 Christmas/Holiday lights on houses. Or on whatever else you can dream up!
 
 Currently live on https://share.streamlit.io/davisrbr/holiday-lights/main/main.py
+
+My next steps will involve running the  generator on the browser with ONNX.js!
 
 Credits: 
 
