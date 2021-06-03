@@ -24,7 +24,7 @@ def load_model():
 
     return model
 
-@st.cache(show_spinner=False)
+@st.cache(show_spinner=False, max_entries=4)
 def lightify(img, model):
     transform = get_transform()
     new_img = transform(img)
