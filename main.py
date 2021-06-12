@@ -24,6 +24,7 @@ def load_model():
 
     return model
 
+
 @st.cache(show_spinner=False, max_entries=4)
 def lightify(img, model):
     transform = get_transform()
@@ -42,10 +43,9 @@ if __name__ == "__main__":
         "Miss the holidays? Want some Christmas cheer? Either enter a street address or upload an image (ideally of a house) to experience some Christmas magic."
     )
     model = load_model()
-    address = st.text_input('Place or Street Address to be Lit Up', "")
+    address = st.text_input("Place or Street Address to be Lit Up", "")
     if address:
-        street_viewer = StreetViewer(api_key=st.secrets["API_KEY"],
-                                   location=address)
+        street_viewer = StreetViewer(api_key=st.secrets["API_KEY"], location=address)
         street_viewer.get_meta()
         try:
             col1, col2 = st.beta_columns(2)
@@ -60,16 +60,23 @@ if __name__ == "__main__":
                 col2.header("December 25th")
                 col2.image(arr)
             else:
-                st.write("We cannot process your address... looks like you're getting coal for Christmas.")
+                st.write(
+                    "We cannot process your address... looks like you're getting coal for Christmas."
+                )
         except (UnidentifiedImageError):
-            st.subheader("We cannot process your address... looks like you're getting coal for Christmas.")
+            st.subheader(
+                "We cannot process your address... looks like you're getting coal for Christmas."
+            )
 
     file = st.file_uploader("Or upload an image to be Lit Up")
+    if not file:
+        # if not uploaded, use samle file
+        file = "images/0366A765-36D9-4A1A-9855-B7A6097B9A16_1_105_c.jpeg"
 
     if file:
         try:
             col1, col2 = st.beta_columns(2)
-            img = Image.open(file).convert('RGB')
+            img = Image.open(file).convert("RGB")
             # st.subheader("Here is the house you've selected")
             resized_image = img.resize((256, 256))
             col1.header("December 24th")
@@ -80,4 +87,6 @@ if __name__ == "__main__":
             col2.header("December 25th")
             col2.image(arr)
         except (UnidentifiedImageError):
-            st.write("We cannot process your image file... looks like you're getting coal for Christmas.")
+            st.write(
+                "We cannot process your image file... looks like you're getting coal for Christmas."
+            )
