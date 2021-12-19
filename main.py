@@ -40,7 +40,7 @@ def lightify(img, model):
 if __name__ == "__main__":
     st.title("Lightify")
     st.subheader(
-        "Miss the holidays? Want some Christmas cheer? Either enter a street address or upload an image (ideally of a house) to experience some Christmas magic."
+        "Want some holiday cheer without the hassle? Either enter a street address or upload an image of a house to experience some ~Christmas magic~"
     )
     model = load_model()
     address = st.text_input("Place or Street Address to be Lit Up", "")
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     if not file:
         # if not uploaded, use samle file
         file = "images/0366A765-36D9-4A1A-9855-B7A6097B9A16_1_105_c.jpeg"
-
+        
     if file:
         try:
             col1, col2 = st.beta_columns(2)
@@ -90,3 +90,5 @@ if __name__ == "__main__":
             st.write(
                 "We cannot process your image file... looks like you're getting coal for Christmas."
             )
+            
+    st.write("Model adapted from Contrastive Learning for Unpaired Image-to-Image Translation by Park, Taesung, et al.")
